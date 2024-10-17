@@ -17,7 +17,7 @@ const AuthorsCard = ({ item }) => {
             </div>
           )}
           <img
-            className='w-[50px] h-[50px] object-cover rounded-full'
+            className={`w-[50px] h-[50px] object-cover rounded-full ${authLoading ? "hidden" : "flex"}`}
             src={item.avatar}
             alt="image" 
             onLoad={() => setAuthLoading(false)}

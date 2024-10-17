@@ -16,7 +16,7 @@ const PostsCard = ({ post }) => {
         <>
             <div onClick={() => setNavigate(post?.slug, post?.id)}>
                 <div className={`px-5 py-3 dark:bg-[#393939] duration-200 hover:bg-slate-100 rounded-md bg-slate-50 cursor-pointer dark:hover:bg-[#222222]`}>
-                    <div className='flex justify-between lg:flex-row flex-col  items-center gap-3'>
+                    <div className='flex justify-between lg:flex-row flex-col  items-cen gap-3'>
                         <div className="flex-[4]">
                             <div className="flex justify-start gap-4 items-center border-b-[1px] dark:border-b-gray-500 pb-2">
                                 {authLoading && (
