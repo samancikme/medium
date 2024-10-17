@@ -1,6 +1,8 @@
 import React from 'react'
+import "react-toastify/dist/ReactToastify.css";
 import { useSelector } from 'react-redux'
 import PostsCard from '../components/page-components/PostsCard'
+import { ToastContainer } from 'react-toastify'
 
 const Home = () => {
   const { selectedPostId } = useSelector(state => state.pageActions)
@@ -17,13 +19,13 @@ const Home = () => {
           <>
             {!selPost.length ?
               <div className='flex flex-col gap-3 h-[calc(100vh-120px)] overflow-y-scroll'>
-                {posts.map(post => (
+                {posts?.map(post => (
                   <PostsCard key={post.id} post={post} />
                 ))}
               </div>
               :
               <div className='flex flex-col gap-3 overflow-y-scroll'>
-                {selPost.map(post => (
+                {selPost?.map(post => (
                   <PostsCard key={post.id} post={post} />
                 ))}
               </div>
@@ -31,6 +33,7 @@ const Home = () => {
           </>
         }
       </div>
+      <ToastContainer />
     </>
   )
 }

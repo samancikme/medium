@@ -3,10 +3,17 @@ import { authorization, setUserStatus } from "../store/action";
 import { getAllAuth, getAllPosts, getProfile } from "./getRequests";
 import {
   errLogD,
+  errPostCrD,
+  errPostCrL,
+  errProCrD,
+  errProCrL,
   errRegD,
   errRegL,
   succesLogD,
   succesLogL,
+  succesPostCrD,
+  succesPostCrL,
+  succesProCrL,
   succesRegD,
   succesRegL,
 } from "../constants/toasts";
@@ -80,11 +87,15 @@ export const createProfile = (url, values, resetForm) => {
       console.log("Request muvaffaqiyatli:", res.data);
       dispatch(getAllPosts(url));
       dispatch(getAllAuth())
+      theme ? succesProCrL() : succesProCrL();
       dispatch(getProfile(url));
       resetForm();
-    } catch (error) {
-      console.log("Xatolik yuz berdi:", error);
+    } catch (err) {
+      console.log("Xatolik yuz berdi:", err);
       resetForm();
+      theme
+        ? errProCrL(err.response.data.message)
+        : errProCrD(err.response.data.message);
     }
   };
 };
@@ -101,11 +112,15 @@ export const createPost = (url, values, resetForm) => {
         },
       });
       console.log("Request muvaffaqiyatli:", res.data);
+      theme ? succesPostCrL() : succesPostCrD();
       dispatch(getAllPosts(url));
       resetForm();
-    } catch (error) {
-      console.log("Xatolik yuz berdi:", error);
+    } catch (err) {
+      console.log("Xatolik yuz berdi:", err);
       resetForm();
+      theme
+        ? errPostCrL(err.response.data.message)
+        : errPostCrD(err.response.data.message);
     }
   };
 };

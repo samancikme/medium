@@ -21,7 +21,7 @@ const Sidebar = () => {
             ))}
           </div>
           :
-          <div className='flex flex-col gap-2'>{authors.map((author, index) => (
+          <div className='flex flex-col gap-2'>{authors?.map((author, index) => (
             <div key={author.id} className={`${index === authors.length - 1 ? '' : 'border-b-[1px]'} dark:border-gray-600 border-gray-200 pb-1`}>
               <AuthorsCard item={author} />
             </div>

@@ -26,7 +26,7 @@ const PostsCard = ({ post }) => {
                                 )}
                                 <img
                                     className={`${authLoading ? "hidden" : "flex"} w-[50px] h-[50px] rounded-full object-cover`}
-                                    src={authors.find(auth => auth?.id === post?.authorId)?.avatar}
+                                    src={authors?.find(auth => auth?.id === post?.authorId)?.avatar}
                                     alt="Person image"
                                     onLoad={() => setAuthLoading(false)} />
                                 <span className="text-[20px] font-medium">
