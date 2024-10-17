@@ -43,7 +43,7 @@ const MainLayout = () => {
         showProfile ? dispatch(showPro()) : ""
         updPro ? dispatch(setUpdPro()) : ""
       }}
-      className='font-fredoka min-h-screen duration-500 dark:bg-[#323232] flex flex-col gap-4 dark:text-white bg-[#f2fef8] relative overflow-hidden'>
+      className='font-fredoka min-h-[calc(100vh - 30px)] duration-500 dark:bg-[#323232] flex flex-col gap-4 dark:text-white bg-[#f2fef8] relative overflow-hidden'>
       <div className='border-b-[1px] dark:border-gray-600 sticky top-0  dark:bg-[#262626] duration-500 bg-[#f2fef8]'>
         <Header />
       </div>
