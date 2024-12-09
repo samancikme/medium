@@ -14,7 +14,7 @@ const CreatePost = () => {
     title: Yup.string().required('Title is required').min(3, 'Min characters 3').max(50, 'Very long!'),
     excerpt: Yup.string().required('Excerpt is required').min(10, 'Min characters 10').max(100, 'Very long!'),
     image: Yup.string().url('Invalid image address'),
-    content: Yup.string().min(20, 'Min characters 20').max(500, 'Very long!'),
+    // content: Yup.string().min(20, 'Min characters 20').max(500, 'Very long!'),
   });
 
 

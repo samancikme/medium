@@ -3,7 +3,7 @@ import AuthorsCard from './page-components/AuthorsCard'
 
 const Sidebar = () => {
   const { authors, isAuthorLoaded } = useSelector(state => state.allData)
-  // console.log(authors)
+  console.log(authors)
   return (
     <div>
       <div className="flex flex-col gap-2 px-3 py-5 last:border-b-0 border-b-[1px] rounded-md" >

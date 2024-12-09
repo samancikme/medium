@@ -12,7 +12,7 @@ const App = () => {
       <>
         <Route path='/' element={<MainLayout />} >
           <Route index element={<Home />} />
-          <Route path='create-post' element={<CreatePost />} />
+          <Route path='/create-post' element={<CreatePost />} />
           <Route path='/posts/:slug' element={<PostsDetail />} />
           <Route path='/authentication/:type' element={<Authentication />} />
           <Route path='/*' element={<NotFound />} />
