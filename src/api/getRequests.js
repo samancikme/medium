@@ -45,6 +45,7 @@ export const getProfile = (url) => {
       const res = await axios.get(`${url}/profile`, {
         headers: { Authorization: `Bearer ${token}` },
       })
+      console.log(res)
       dispatch(fetchedProfileData(res.data.author))
     } catch (err) {
       console.log(err)

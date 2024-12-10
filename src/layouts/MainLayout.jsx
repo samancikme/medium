@@ -10,7 +10,7 @@ import { getAllAuth, getAllPosts, getProfile } from '../api/getRequests'
 
 
 const MainLayout = () => {
-  const { theme, pageAct, showProfile , updPro} = useSelector(state => state?.pageActions)
+  const { theme, pageAct, showProfile, updPro } = useSelector(state => state?.pageActions)
   const cont = useSelector(state => state.allData)
   console.log(cont)
   const dispatch = useDispatch()
@@ -29,6 +29,8 @@ const MainLayout = () => {
       localStorage.setItem('medium-theme', pageAct?.theme)
     }
   }, [])
+
+  console.log(theme)
 
   const location = useLocation()
   if (theme) {

@@ -19,7 +19,7 @@ import {
 } from "../constants/toasts";
 
 const mode = localStorage.getItem("medium-theme");
-const theme = mode === "false" ? false : true && mode === 'undefined' ? false : true;
+const theme = mode == 'true' ? true : false ;
 
 export const registration = (url, value, { resetForm }) => {
   return async (dispatch) => {
@@ -52,12 +52,11 @@ export const logIn = (url, value, { resetForm }) => {
           "Content-type": "application/json",
         },
       });
-
+      console.log(theme)
       theme ? succesLogL() : succesLogD();
       dispatch(setUserStatus());
       dispatch(getProfile(url));
       resetForm();
-      console.log(res.data);
       localStorage.setItem("token", res.data.token);
       setTimeout(() => dispatch(authorization("login")) , 2000)
     } catch (err) {
@@ -86,7 +85,7 @@ export const createProfile = (url, values, resetForm) => {
       });
       console.log("Request muvaffaqiyatli:", res.data);
       dispatch(getAllPosts(url));
-      dispatch(getAllAuth())
+      dispatch(getAllAuth(url))
       theme ? succesProCrL() : succesProCrL();
       dispatch(getProfile(url));
       resetForm();
